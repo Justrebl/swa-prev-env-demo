@@ -6,6 +6,7 @@ on:
       - main
       - staging
       - dev
+      - Feature/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -38,7 +39,7 @@ jobs:
   build_and_deploy_preview:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Build and Deploy Preview On PR Job
     steps:
       - uses: actions/checkout@v3
         with:
