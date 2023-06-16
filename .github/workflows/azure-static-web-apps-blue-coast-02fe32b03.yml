@@ -6,6 +6,7 @@ on:
       - main
       - staging
       - dev
+      - Feature/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
